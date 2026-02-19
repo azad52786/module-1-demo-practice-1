@@ -152,8 +152,8 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    padding-inline: 50px;
-    padding-block: 80px;
+    padding-inline: 10px;
+    padding-block: 30px;
     min-height: 100%;
     background-color: #f7f7f7;
 }
@@ -186,7 +186,7 @@ body {
 
 .gradient-btn {
     display: block;
-    padding: 30px 60px;
+    padding: 20px 40px;
     font-size: 1.7rem;
     background: #eee;
     color: #000;
@@ -319,7 +319,7 @@ body {
 
 .contact-card {
     background: linear-gradient(to bottom right, #0298e1, #007cc6);
-    padding: 80px;
+    padding: 20px;
     color: #fff;
 }
 
@@ -353,8 +353,7 @@ body {
 .contact-number {
     display: flex;
     align-items: center;
-    font-size: 3rem;
-
+    font-size: 1.5rem;
 }
 
 .contact-mail {
@@ -403,6 +402,23 @@ footer {
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
+    }
+
+    .about-section-content {
+        padding-inline: 50px;
+        padding-block: 80px;
+    }
+
+    .gradient-btn {
+        padding: 30px 60px;
+    }
+
+    .contact-card {
+        padding: 80px;
+    }
+
+    .contact-number {
+        font-size: 3rem;
     }
 }
 
