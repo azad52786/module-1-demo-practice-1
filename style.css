@@ -26,9 +26,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+header {
+    position: relative;
+}
+
 .navbar {
     display: none;
 }
+
+
 
 .navbar__wrapper {
     display: flex;
@@ -63,6 +69,40 @@ body {
     color: #fff;
 }
 
+.navbar {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .navbar__menu {
+        display: block;
+        padding-bottom: 10px;
+        background-color: #fff;
+        width: 100vw;
+    }
+
+    .navbar__menu li {
+        padding-inline: 12px;
+        margin-bottom: 10px;
+    }
+
+    .navbar__menu li a {
+        display: block;
+        padding-block: 10px;
+        font-size: 1.5rem;
+        color: #000;
+        text-align: center;
+        font-weight: 500;
+        border-radius: 10px;
+    }
+}
+
 .navbar-toggle-button {
     all: unset;
     background-color: transparent;
@@ -85,31 +125,6 @@ body {
 .navbar-toggle-button.active::before {
     background-image: url('./images/close.png');
 }
-
-.mobile-navbar {
-    display: none;
-}
-
-.mobile-navbar__menu {
-    padding-bottom: 10px;
-}
-
-.mobile-navbar__menu a {
-    display: block;
-    padding-block: 10px;
-    font-size: 1.5rem;
-    color: #000;
-    text-align: center;
-    font-weight: 500;
-    border-radius: 10px;
-}
-
-.mobile-navbar__menu a:hover,
-.mobile-navbar__menu a.active {
-    background: linear-gradient(180deg, #A15CFF 0%, #3D6DF2 100%);
-    color: #fff;
-}
-
 
 .hero__section {
     min-height: calc(100vh - 119px);
@@ -466,7 +481,7 @@ footer {
     }
 
     .navbar {
-        display: block;
+        display: block !important;
     }
 
     .navbar-toggle-button,
