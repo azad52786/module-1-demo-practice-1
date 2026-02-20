@@ -86,6 +86,7 @@ body {
     flex: 0 0 100%;
     overflow-wrap: break-word;
     hyphens: auto;
+    min-width: 0;
 }
 
 .feature-action-card {
@@ -174,7 +175,7 @@ body {
 }
 
 .section-image {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
     object-position: center;
