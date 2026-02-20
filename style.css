@@ -68,41 +68,37 @@ body {
     background: url(./images/banner-img.jpg) center / cover no-repeat;
 }
 
-.row {
+.section-cards {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 48px;
+    column-gap: 24px;
+    margin-block: 48px;
     justify-content: center;
-    margin-left: -12px;
-    margin-right: -12px;
-}
-
-.four-col-cards,
-.two-col-cards {
-    flex: 0 0 100%;
-    padding-inline: 12px;
-    margin-block: 24px;
-    overflow: hidden;
 }
 
 .feature-action-cards {
     margin-top: -150px;
 }
 
+.four-col-card,
+.two-col-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
 .feature-action-card {
     display: flex;
     padding-inline: 20px;
     padding-block: 30px;
-    height: 100%;
 }
 
 .quick-action-content {
-    max-width: 90%;
+    flex: 0 0 90%;
+    min-width: 0;
     color: #fff;
-}
-
-.quick-action-content h3,
-.quick-action-content p {
-    hyphens: auto;
 }
 
 .quick-action-content h3 {
@@ -110,7 +106,6 @@ body {
     font-weight: 500;
     margin-bottom: 30px;
     line-height: 1.1;
-    overflow-wrap: break-word;
 }
 
 .quick-action-content p {
@@ -148,14 +143,16 @@ body {
 }
 
 .about-section-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
     padding-inline: 10px;
     padding-block: 30px;
-    min-height: 100%;
     background-color: #f7f7f7;
+}
+
+.about-section-content>:not(:last-child),
+.highlighted-card-content>:not(:last-child),
+.event-content> :not(:last-child),
+.testimonial-card-content> :not(:last-child) {
+    margin-bottom: 40px;
 }
 
 .about-section-content h2,
@@ -235,12 +232,8 @@ body {
     margin-block: 24px;
 }
 
-.why-us-section .row {
-    justify-content: start;
-}
-
-.why-us-section .two-col-cards {
-    margin: 0;
+.why-us-section .section-cards {
+    justify-content: flex-start;
 }
 
 .highlighted-card-content {
@@ -248,35 +241,29 @@ body {
     background: linear-gradient(rgba(255, 0, 85, 0.8),
             rgba(255, 0, 150, 0.8));
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-
 }
 
 .event-content {
-    padding: 80px 30px;
+    padding: 80px 40px;
     background: linear-gradient(to bottom, #FFA726, #fb5800);
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    height: 100%;
 }
 
 .event-content ul li::before {
     content: "";
     display: inline-block;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 5px;
+    left: 0;
     background: url(./images/li-arrow.png) center / contain no-repeat;
     margin-right: 15px;
     margin-left: -10px;
+    vertical-align: middle;
 }
-
-.event-content ul li {
-    display: flex;
-    align-items: center;
+.event-content ul :not(:last-child) {
+    margin-bottom: 20px;
 }
 
 .testimonial-card {
@@ -296,15 +283,12 @@ body {
 .testimonial-card-content {
     background-color: #f3f3f3;
     padding: 30px;
-    margin-top: -110px;
+    /* margin-top: -110px; */
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
 }
 
 .testimonial-card-content p {
-    margin-top: 80px;
+    padding-top: 80px;
     font-weight: 200;
     font-size: 1.5rem;
     line-height: 1.4;
@@ -389,7 +373,8 @@ footer {
 .container {
     width: 100%;
     padding-inline: 15px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -427,17 +412,9 @@ footer {
         max-width: 960px;
     }
 
-    .four-col-cards,
-    .two-col-cards {
-        flex: 0 0 50%;
-    }
-
-    .section-image {
-        height: 100%;
-    }
-
-    #contact-section iframe {
-        height: 100%;
+    .four-col-card,
+    .two-col-card {
+        flex: 0 0 calc((100% - 24px) / 2);
     }
 
     .navbar {
@@ -450,8 +427,8 @@ footer {
         max-width: 1140px;
     }
 
-    .four-col-cards {
-        flex: 0 0 33.3333%;
+    .four-col-card {
+        flex: 0 0 calc((100% - 48px) / 3);
     }
 }
 
@@ -460,7 +437,7 @@ footer {
         max-width: 1320px;
     }
 
-    .four-col-cards {
-        flex: 0 0 25%;
+    .four-col-card {
+        flex: 0 0 calc((100% - 72px) / 4);
     }
 }
