@@ -69,10 +69,6 @@ header {
     color: #fff;
 }
 
-.navbar {
-    display: none;
-}
-
 @media screen and (max-width: 992px) {
     .navbar {
         position: absolute;
@@ -96,8 +92,6 @@ header {
         display: block;
         padding-block: 10px;
         font-size: 1.5rem;
-        color: #000;
-        text-align: center;
         font-weight: 500;
         border-radius: 10px;
     }
